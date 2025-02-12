@@ -1,3 +1,4 @@
 postServices/src/main/resources/application.properties
 userServices/src/main/resources/application.properties
 *application.properties
+hireme-clean/
