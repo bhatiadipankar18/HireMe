@@ -7,13 +7,27 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="DiscoveryServer" />
         <module name="userServices" />
+        <module name="ConnectionsService" />
         <module name="postServices" />
+      </profile>
+      <profile name="Annotation profile for APIGateway" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/unknown/lombok-unknown.jar" />
+        </processorPath>
+        <module name="APIGateway" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="APIGateway" options="-parameters" />
+      <module name="ConnectionsService" options="-parameters" />
+      <module name="DiscoveryServer" options="-parameters" />
       <module name="postServices" options="-parameters" />
       <module name="userServices" options="-parameters" />
     </option>
